@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block content %}
+
+ <div class="jumbotron" align= "center">
+  <h1>Keyword Grouper<span class="badge">Beta</span></h1>
+  <p>A free tool to group your SEM/SEO Search Terms together to from effective Campaigns.</p>
+  <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Try it Now!
+</button><br><br>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_sharing_toolbox"></div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Upload Txt file containing Keywords</h4>
+      </div>
+      <div class="modal-body" id = "myform" >
+        <form action="" method="post" enctype="multipart/form-data">
+          <input type="file" name="file">
+          <input type="submit" value="Upload">
+    </form>
+     </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- <p><a class="btn btn-primary btn-sm">Learn more</a></p> -->
+</div>
+<!--MOdal 2-->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Please Wait... Good Receipe Takes Time :)</h4>
+      </div>
+        <style type="text/css">
+      .container {
+          margin-top: 100px;
+          width: 500px;
+      }
+      </style>
+      <div class="container">
+          <div class="progress progress-striped active">
+              <div class="progress-bar" style="width: 0%;"></div>
+          </div>
+      </div>
+      <script type="text/javascript">
+      var progress = setInterval(function () {
+          var $bar = $('.progress-bar');
+
+          if ($bar.width() >= 500) {
+              clearInterval(progress);
+              $('.progress').removeClass('active');
+          } else {
+              $bar.width($bar.width() + 30);
+          }
+          //$bar.text($bar.width() / 4 + "%");
+      }, 30000);
+      </script>
+     
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="col-lg-4">
+            <div class="bs-component">
+              <h2>Awesomeness</h2>
+              <p>Keyword Grouper is the most advanced tool for grouping your Keywords,Search Terms for your PPC campaigns. </p>
+              <p>It uses  <strong>Natural Language Processing</strong> for effective semantic clustering of your keywords.</p>
+              <p>You can use any Language keywords/search terms.</p>
+              <p>Semantic clustering will help you to build more effective and high performance campaigns.</p>
+              <p>Moreover its <strong style ="color:green">FREE!</strong></p>
+            </div>
+
+ </div>
+ <div class="col-lg-4">
+            <div class="bs-component">
+              <h2>How to use it</h2>
+              <p>Click TRY it NOW button and upload <strong style ="color:green">txt </strong>file containing one keyword in each line.<br>
+                <strong>Sample File :</strong><a href="{{url_for('static',filename="sample.txt")}}" target="_blank">  sample.txt</a>
+              <h3>And Woolah!</h3>
+              <p>You will get a clustered <strong style ="color:green">csv</strong> to download.
+              Similar Keywords are clustered together with same group id.</p>
+              <p style ="color:green"><strong>Just try n see! </strong> </p>
+            </div>
+
+ </div>
+ <div class="col-lg-4">
+            <div class="bs-component">
+              <h2>About</h2>
+              <p>Keyword Grouper clusters upto 2500 keywords for free.
+              <p>To support this project and to increase the limit of Keywords Processing ,we require your help.</p>
+              <p>Help us by Donating.</p>
+		<a class="coinbase-button" data-button-style="custom_small" data-button-text = "Contribute with Bitcoin" data-code="ffdd9f190cf82cbbd05df10075632593" href="https://coinbase.com/checkouts/ffdd9f190cf82cbbd05df10075632593">Contribute With Bitcoin</a><script src="https://coinbase.com/assets/button.js" type="text/javascript"></script>
+            </div>
+          </div>
+      </div>
+ </div>
+</div>
+ <script type="text/javascript">
+(function (d) {
+  d.getElementById('myform').onsubmit = function () {
+    $('#myModal').modal('hide');
+    $('#myModal2').modal('show');
+
+   
+  };
+}(document));
+</script>
+
+
+{% endblock %}
